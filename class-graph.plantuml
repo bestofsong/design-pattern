@@ -1,0 +1,264 @@
+@startuml
+Class01 <|-- Class02
+Class03 *-- Class04
+Class05 o-- Class06
+Class07 .. Class08
+Class09 -- Class10
+@enduml
+
+@startuml
+Class01 "1" *-- "many" Class02 : contains
+Class03 o-- Class04 : aggregation
+Class05 --> "1" Class06
+@enduml
+
+
+' 给标签加箭头
+@startuml
+class Car
+Driver - Car : drives >
+Car *- Wheel : have 4 >
+Car -- Person : < owns
+@enduml
+
+
+@startuml
+Object <|-- ArrayList
+Object : equals()
+ArrayList : Object[] elementData
+ArrayList : size()
+@enduml
+
+@startuml
+class Dummy {
+  String data
+  void methods()
+  {field} A field (despite parentheses)
+  {method} Some method
+  -field1
+  #field2
+  ~method1()
+  +method2()
+
+  {static} String id
+  {abstract} void methods_abstract()
+}
+class Flight {
+   flightNumber : Integer
+   departureTime : Date
+}
+Dummy -- Flight
+@enduml
+
+
+@startuml
+class Foo1 {
+  You can use
+  several lines
+  ..
+  as you want
+  and group
+  ==
+  things together.
+  __
+  You can have as many groups
+  as you want
+  --
+  End of class
+}
+
+class User {
+  .. Simple Getter ..
+  + getName()
+  + getAddress()
+  .. Some setter ..
+  + setName()
+  __ private data __
+  int age
+  -- encrypted --
+  String password
+}
+
+@enduml
+
+
+@startuml
+
+class Foo
+note left: On last defined class
+
+note top of Object
+  In java, <size:18>every</size> <u>class</u>
+  <b>extends</b>
+  <i>this</i> one.
+end note
+
+note as N1
+  This note is <u>also</u>
+  <b><color:royalBlue>on several</color>
+  <s>words</s> lines
+  And this is hosted by <img:images/sourceforge.png>
+end note
+
+@enduml
+
+
+@startuml
+
+class Dummy
+Dummy --> Foo : A link
+note on link #red: note that is red
+
+Dummy --> Foo2 : Another link
+note right on link #blue
+	this is my note on right link
+	and in blue
+end note
+
+@enduml
+
+
+
+@startuml
+
+abstract class AbstractList
+abstract AbstractCollection
+interface List
+interface Collection
+
+List <|-- AbstractList
+Collection <|-- AbstractCollection
+
+Collection <|- List
+AbstractCollection <|- AbstractList
+AbstractList <|-- ArrayList
+
+class ArrayList {
+  Object[] elementData
+  size()
+}
+
+enum TimeUnit {
+  DAYS
+  HOURS
+  MINUTES
+}
+
+annotation SuppressWarnings
+
+@enduml
+
+
+
+
+@startuml
+
+class Foo<? extends Element> {
+  int size()
+}
+Foo *- Element
+
+@enduml
+
+
+
+@startuml
+
+package "Classic Collections" #DDDDDD {
+  Object <|-- ArrayList
+}
+
+package net.sourceforge.plantuml {
+  Object <|-- Demo1
+  Demo1 *- Demo2
+}
+
+@enduml
+
+
+@startuml
+
+skinparam packageStyle rectangle
+
+package foo1.foo2 {
+}
+
+package foo1.foo2.foo3 {
+  class Object
+}
+
+foo1.foo2 +-- foo1.foo2.foo3
+
+@enduml
+
+
+
+@startuml
+
+class BaseClass
+
+namespace net.dummy #DDDDDD {
+    .BaseClass <|-- Person
+    Meeting o-- Person
+    
+    .BaseClass <|- Meeting
+}
+
+namespace net.foo {
+  net.dummy.Person  <|- Person
+  .BaseClass <|-- Person
+
+  net.dummy.Meeting o-- Person
+}
+
+BaseClass <|-- net.unused.Person
+
+@enduml
+
+
+
+@startuml
+set namespaceSeparator ::
+class X1::X2::foo {
+  some info
+}
+@enduml
+
+
+@startuml
+class foo
+bar ()- foo
+@enduml
+
+
+@startuml
+class Student {
+  Name
+}
+Student "0..*" - "1..*" Course
+(Student, Course) .. Enrollment
+
+class Enrollment {
+  drop()
+  cancel()
+}
+@enduml
+
+
+
+@startuml
+
+class Bar1
+class Bar2
+together {
+  class Together1
+  class Together2
+  class Together3
+}
+Together1 - Together2
+Together2 - Together3
+Together2 -[hidden]--> Bar1
+Bar1 -[hidden]> Bar2
+
+
+@enduml

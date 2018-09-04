@@ -1,0 +1,47 @@
+@startuml
+title Composite模式（更透明）
+skinparam monochrome true
+
+class Component {
+  ..公共操作..
+  Operation ()
+  ..子节点管理..
+  Add(Component)
+  Remove(Component)
+  GetChild(int)
+}
+
+note top of Component
+公共基类
+end note
+
+class Leaf {
+  ..公共操作..
+  Operation ()
+  ..子节点管理..
+  Add(Component) // noop/throw
+  Remove(Component) // noop/throw
+  GetChild(int) // noop/throw
+}
+note bottom of Leaf
+单一组件
+end note
+
+class Composite {
+  ..公共操作..
+  Operation ()
+  ..子节点管理..
+  Add(Component)
+  Remove(Component)
+  GetChild(int)
+}
+note bottom of Composite
+复合组件
+end note
+
+
+Component <|-- Leaf : 继承
+Component <|- Composite : 继承
+Component -o Composite : 聚合
+
+@enduml
