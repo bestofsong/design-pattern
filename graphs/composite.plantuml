@@ -1,5 +1,5 @@
 @startuml
-title Composite模式
+title composite-pattern
 skinparam monochrome true
 
 class Component {

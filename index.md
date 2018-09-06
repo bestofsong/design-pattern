@@ -2,7 +2,8 @@
 ```
 实用
 ```
-
+![class diagram](out/graphs/abstract-factory/abstract-factory.png)
+![js](out/graphs/abstract-factory.js/abstract-factory(javascript).png)
 - 适用条件
   - 有一个类比于工厂的类用于创建一个或多个产品
   - 这个工厂是抽象的，可以有不同的具体类，生产具有不同视感（look and feel）产品
@@ -20,6 +21,7 @@
 ```
 常见，但是容易被忽略
 ```
+![ok](out/graphs/composite/composite-pattern.png)
 
 - 适用条件
   - 树形结构
@@ -29,6 +31,8 @@
     - 更透明
     - 更安全
 
-## React 
+![transparent](out/graphs/composite.transparent/composite-pattern(transparent).png)
+![safe](out/graphs/composite.safe/composite-pattern(safe).png)
+## React设计模式
 - 受控组件、非受控组件(https://github.com/SangKa/react-in-patterns-cn/blob/master/book/chapter-5/README.md)
 - 高阶组件(https://github.com/SangKa/react-in-patterns-cn/blob/master/book/chapter-4/README.md#%E9%AB%98%E9%98%B6%E7%BB%84%E4%BB%B6)

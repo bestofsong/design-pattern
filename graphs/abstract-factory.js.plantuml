@@ -1,0 +1,32 @@
+@startuml
+title abstract-factory(javascript)
+skinparam monochrome true
+
+class ConcreteFactory1 {
+  CreateProductA ()
+  CreateProductB ()
+}
+
+class ConcreteFactory2 {
+  CreateProductA ()
+  CreateProductB ()
+}
+
+class ProductA1 {
+}
+
+class ProductA2 {
+}
+
+class ProductB1 {
+}
+
+class ProductB2 {
+}
+
+ConcreteFactory1 ..> ProductA1
+ConcreteFactory1 ..> ProductB1
+
+ConcreteFactory2 ..> ProductA2
+ConcreteFactory2 ..> ProductB2
+@enduml

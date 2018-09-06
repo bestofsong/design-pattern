@@ -1,5 +1,5 @@
 @startuml
-title Composite模式（更安全）
+title composite-pattern(safe)
 skinparam monochrome true
 
 class Component {
